@@ -2,7 +2,6 @@ package com.tmb;
 
 import org.testng.annotations.BeforeTest;
 
-
 public class BaseTest {
 
     @BeforeTest

@@ -18,11 +18,11 @@ public final class LoginPageTest extends BaseTest {
 
     @Test
     public void login() {
-    commonActions.get(loginConfig.URL().trim())
+    commonActions.get(loginConfig.url().trim())
             .clear(userName)
-            .sendKeys(userName, loginConfig.Username().trim())
+            .sendKeys(userName, loginConfig.username().trim())
             .clear(password)
-            .sendKeys(password, loginConfig.Password().trim())
+            .sendKeys(password, loginConfig.password().trim())
             .click(LoginButton);
     }
 
