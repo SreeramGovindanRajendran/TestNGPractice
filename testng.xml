@@ -6,6 +6,7 @@
 		<parameter name="browser" value="Chrome" />
 		<classes>
 			<class name="com.testng.learning.CrossBrowser" />
+			<class name="com.testng.learning.CrossBrowser" />
 		</classes>
 	</test>
 

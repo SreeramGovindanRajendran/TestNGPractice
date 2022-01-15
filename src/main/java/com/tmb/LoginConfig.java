@@ -2,7 +2,7 @@ package com.tmb;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources(value = "file:${user.dir}/src/test/resources/tmb/LoginConfig.properties")
+@Config.Sources(value = "file:${user.dir}"+FrameworkConstants.LOGINCONFIGPROPERTIESPATH)
 public interface LoginConfig extends Config {
 
     @Key("URL")
