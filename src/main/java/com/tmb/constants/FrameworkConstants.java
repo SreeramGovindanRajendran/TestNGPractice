@@ -1,4 +1,4 @@
-package com.tmb;
+package com.tmb.constants;
 
 public class FrameworkConstants {
 

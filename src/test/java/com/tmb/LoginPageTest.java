@@ -1,29 +1,22 @@
 package com.tmb;
 
-import org.aeonbits.owner.ConfigFactory;
-import org.openqa.selenium.By;
+import com.tmb.pages.HomePage;
+import com.tmb.pages.LoginPage;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 public final class LoginPageTest extends BaseTest {
 
-    LoginConfig loginConfig = ConfigFactory.create(LoginConfig.class);
-    CommonActions commonActions = new CommonActions();
+    HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
 
-    private final By userName = By.id("txtUsername");
-    private final By password = By.xpath("//input[@id='txtPassword' and @type='password']");
-    private final By LoginButton = By.id("btnLogin");
-
-    private LoginPageTest() {
-    }
+    private LoginPageTest() {}
 
     @Test
     public void login() {
-    commonActions.get(loginConfig.url().trim())
-            .clear(userName)
-            .sendKeys(userName, loginConfig.username().trim())
-            .clear(password)
-            .sendKeys(password, loginConfig.password().trim())
-            .click(LoginButton);
+        loginPage.launchURL().enterUsername().enterPassword().clicklogin();
+        Assertions.assertThat(homePage.getHomePageTitle()).isEqualTo("OrangeHRM");
     }
-
 }
+
+

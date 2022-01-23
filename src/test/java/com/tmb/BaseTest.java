@@ -1,5 +1,6 @@
 package com.tmb;
 
+import com.tmb.drivers.DriverOperations;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
@@ -11,6 +12,6 @@ public class BaseTest {
 
     //@AfterTest
     public void tearDown(){
-        DriverOperations.close();
+        DriverOperations.quit();
     }
 }

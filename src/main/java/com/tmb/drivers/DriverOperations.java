@@ -1,4 +1,4 @@
-package com.tmb;
+package com.tmb.drivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +21,7 @@ public final class DriverOperations {
             driver = new ChromeDriver();
     }
 
-    public static void close() {
+    public static void quit() {
         if (Objects.nonNull(driver)) {
             driver.quit();
             driver = null;
