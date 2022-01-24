@@ -1,35 +1,30 @@
 package com.tmb.utils;
 
 import com.tmb.drivers.DriverOperations;
+import com.tmb.enums.WaitStrategy;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class CommonActions {
 
-    protected void wait(By ByElement) {
-        new WebDriverWait(DriverOperations.getDriver(), Duration.ofSeconds(10))
-                .until(d->d.findElement(ByElement).isEnabled());
+
+    protected void sendKeys(By by, String value, WaitStrategy waitStrategy) {
+        ExplicitWaitFactory.waitBy(by, waitStrategy).sendKeys(value);
     }
 
-    protected void sendKeys(By ByElement, String value) {
-        wait(ByElement);
-        DriverOperations.getDriver().findElement(ByElement).sendKeys(value);
+    protected void click(By by, WaitStrategy waitStrategy) {
+        ExplicitWaitFactory.waitBy(by, waitStrategy).click();
     }
 
-    protected void click(By ByElement) {
-        wait(ByElement);
-        DriverOperations.getDriver().findElement(ByElement).click();
-    }
-
-    protected void clear(By ByElement) {
-        wait(ByElement);
-        DriverOperations.getDriver().findElement(ByElement).clear();
+    protected void clear(By by, WaitStrategy waitStrategy) {
+        ExplicitWaitFactory.waitBy(by, waitStrategy).clear();
     }
 
     protected void get(String value) {
         DriverOperations.getDriver().get(value);
+    }
+
+    protected void maximizePage() {
+        DriverOperations.getDriver().manage().window().maximize();
     }
 
     protected String getPageTitle() {

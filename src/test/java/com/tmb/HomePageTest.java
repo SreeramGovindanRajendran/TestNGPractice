@@ -1,16 +1,16 @@
 package com.tmb;
 
-import com.tmb.utils.CommonActions;
+import com.tmb.pages.HomePage;
 import org.testng.annotations.Test;
 
 public final class HomePageTest extends BaseTest{
 
-    CommonActions commonActions = new CommonActions();
+    HomePage homePage = new HomePage();
 
     private HomePageTest(){}
 
     @Test
     public void clickLogout(){
-
+        homePage.clickWelcome().clickLogout();
     }
 }

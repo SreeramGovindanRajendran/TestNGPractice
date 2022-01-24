@@ -1,5 +1,6 @@
 package com.tmb.pages;
 
+import com.tmb.enums.WaitStrategy;
 import com.tmb.utils.CommonActions;
 import org.openqa.selenium.By;
 
@@ -13,11 +14,11 @@ public class HomePage extends CommonActions {
     }
 
     public HomePage clickWelcome(){
-        click(lnkWelcome);
+        click(lnkWelcome, WaitStrategy.CLICKABLE);
         return this;
     }
 
     public void clickLogout(){
-        click(lnkLogout);
+        click(lnkLogout, WaitStrategy.CLICKABLE);
     }
 }
