@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 
 public class CommonActions {
 
-
     protected void sendKeys(By by, String value, WaitStrategy waitStrategy) {
         ExplicitWaitFactory.waitBy(by, waitStrategy).sendKeys(value);
     }
