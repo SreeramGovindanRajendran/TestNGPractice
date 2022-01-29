@@ -1,4 +1,4 @@
-package com.tmb;
+package com.tmb.tests;
 
 import com.tmb.drivers.DriverOperations;
 import org.testng.annotations.AfterTest;

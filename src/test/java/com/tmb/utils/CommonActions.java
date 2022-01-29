@@ -1,6 +1,6 @@
 package com.tmb.utils;
 
-import com.tmb.drivers.DriverOperations;
+import com.tmb.drivers.DriverManager;
 import com.tmb.enums.WaitStrategy;
 import org.openqa.selenium.By;
 
@@ -19,15 +19,15 @@ public class CommonActions {
     }
 
     protected void get(String value) {
-        DriverOperations.getDriver().get(value);
+        DriverManager.getDriver().get(value);
     }
 
     protected void maximizePage() {
-        DriverOperations.getDriver().manage().window().maximize();
+        DriverManager.getDriver().manage().window().maximize();
     }
 
     protected String getPageTitle() {
-        return DriverOperations.getDriver().getTitle();
+        return DriverManager.getDriver().getTitle();
     }
 
 }

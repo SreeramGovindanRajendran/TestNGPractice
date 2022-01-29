@@ -8,11 +8,10 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends CommonActions {
 
-    LoginConfig loginConfig = ConfigFactory.create(LoginConfig.class);
-
     private final By txtBxUserName = By.id("txtUsername");
     private final By txtBxPassword = By.xpath("//input[@id='txtPassword' and @type='password']");
     private final By btnLogin = By.id("btnLogin");
+    LoginConfig loginConfig = ConfigFactory.create(LoginConfig.class);
 
     public LoginPage launchURL() {
         get(loginConfig.url().trim());

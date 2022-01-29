@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite" parallel="tests" thread-count="2">
-	
-	<test name="ChromeTest">
-		<parameter name="browser" value="Chrome" />
-		<classes>
-			<class name="com.testng.learning.CrossBrowser" />
-			<class name="com.testng.learning.CrossBrowser" />
-		</classes>
-	</test>
 
-	<test name="EdgeTest">
-		<parameter name="browser" value="Edge" />
-		<classes>
-			<class name="com.testng.learning.CrossBrowser" />
-		</classes>
-	</test>
-	
+    <test name="ChromeTest">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="CrossBrowser"/>
+            <class name="CrossBrowser"/>
+        </classes>
+    </test>
+
+    <test name="EdgeTest">
+        <parameter name="browser" value="Edge"/>
+        <classes>
+            <class name="CrossBrowser"/>
+        </classes>
+    </test>
+
 </suite>

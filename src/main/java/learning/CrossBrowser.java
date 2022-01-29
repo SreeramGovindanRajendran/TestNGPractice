@@ -1,4 +1,4 @@
-package com.testng.learning;
+package learning;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

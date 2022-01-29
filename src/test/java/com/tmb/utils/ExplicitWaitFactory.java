@@ -1,6 +1,6 @@
 package com.tmb.utils;
 
-import com.tmb.drivers.DriverOperations;
+import com.tmb.drivers.DriverManager;
 import com.tmb.enums.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,16 +20,16 @@ public class ExplicitWaitFactory {
     public static WebElement waitBy(By by, WaitStrategy waitStrategy) {
         WebElement element = null;
         if (waitStrategy == WaitStrategy.CLICKABLE) {
-            element = new WebDriverWait(DriverOperations.getDriver(), Duration.ofSeconds(getTime()))
+            element = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(getTime()))
                     .until(ExpectedConditions.elementToBeClickable(by));
         } else if (waitStrategy == WaitStrategy.VISIBLE) {
-            element = new WebDriverWait(DriverOperations.getDriver(), Duration.ofSeconds(getTime()))
+            element = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(getTime()))
                     .until(ExpectedConditions.visibilityOfElementLocated(by));
         } else if (waitStrategy == WaitStrategy.PRESENCE)
-            element = new WebDriverWait(DriverOperations.getDriver(), Duration.ofSeconds(getTime()))
+            element = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(getTime()))
                     .until(ExpectedConditions.presenceOfElementLocated(by));
         else if (waitStrategy == WaitStrategy.NONE) {
-            element = DriverOperations.getDriver().findElement(by);
+            element = DriverManager.getDriver().findElement(by);
         }
         return element;
     }

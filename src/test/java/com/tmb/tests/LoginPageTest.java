@@ -1,4 +1,4 @@
-package com.tmb;
+package com.tmb.tests;
 
 import com.tmb.pages.HomePage;
 import com.tmb.pages.LoginPage;
@@ -10,7 +10,8 @@ public final class LoginPageTest extends BaseTest {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
 
-    private LoginPageTest() {}
+    private LoginPageTest() {
+    }
 
     @Test
     public void login() {

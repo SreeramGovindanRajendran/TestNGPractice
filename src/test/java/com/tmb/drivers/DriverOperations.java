@@ -10,22 +10,21 @@ public final class DriverOperations {
 
     private static WebDriver driver;
 
-    private DriverOperations(){}
-
-    public static WebDriver getDriver() {
-        return driver;
+    private DriverOperations() {
     }
 
     public static void init() {
         WebDriverManager.chromedriver().setup();
-        if (Objects.isNull(driver))
+        if (Objects.isNull(driver)) {
             driver = new ChromeDriver();
+            DriverManager.setDriver(driver);
+        }
     }
 
     public static void quit() {
         if (Objects.nonNull(driver)) {
             driver.quit();
-            driver = null;
+            DriverManager.unload();
         }
     }
 }
