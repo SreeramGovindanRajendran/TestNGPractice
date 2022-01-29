@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="tmbSuite">
-	
-	<test name="LoginPageTest">
-		<classes>
-			<class name="com.tmb.LoginPageTest" />
-			<class name="com.tmb.HomePageTest"/>
-		</classes>
-	</test>
+
+    <test name="LoginPageTest">
+        <classes>
+            <class name="com.tmb.tests.LoginPageTest"/>
+            <class name="com.tmb.tests.HomePageTest"/>
+        </classes>
+    </test>
 
 </suite>

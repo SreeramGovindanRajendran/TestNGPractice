@@ -1,16 +1,17 @@
-package com.tmb;
+package com.tmb.tests;
 
 import com.tmb.pages.HomePage;
 import org.testng.annotations.Test;
 
-public final class HomePageTest extends BaseTest{
+public final class HomePageTest extends BaseTest {
 
     HomePage homePage = new HomePage();
 
-    private HomePageTest(){}
+    private HomePageTest() {
+    }
 
     @Test
-    public void clickLogout(){
+    public void logout() {
         homePage.clickWelcome().clickLogout();
     }
 }
