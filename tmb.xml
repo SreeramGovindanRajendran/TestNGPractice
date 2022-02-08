@@ -2,11 +2,44 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="tmbSuite">
 
-    <test name="LoginPageTest">
+    <test name="AdminUserTest">
         <classes>
-            <class name="com.tmb.tests.LoginPageTest"/>
-            <class name="com.tmb.tests.AdminPageTest"/>
-            <class name="com.tmb.tests.HomePageTest"/>
+            <class name="com.tmb.tests.LoginPageTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.AdminPageTest">
+                <methods>
+                    <include name="createUser"/>
+                    <include name="getUserDetails"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.HomePageTest">
+                <methods>
+                    <include name="logout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NewUserTest">
+        <classes>
+            <class name="com.tmb.tests.LoginPageTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.AdminPageTest">
+                <methods>
+                    <include name="deleteUser"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.HomePageTest">
+                <methods>
+                    <include name="logout"/>
+                </methods>
+            </class>
         </classes>
     </test>
 

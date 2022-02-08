@@ -3,8 +3,11 @@ package com.tmb.utils;
 import com.tmb.drivers.DriverManager;
 import com.tmb.enums.WaitStrategy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 public class CommonActions {
+
+    Select select;
 
     protected void sendKeys(By by, String value, WaitStrategy waitStrategy) {
         ExplicitWaitFactory.waitBy(by, waitStrategy).sendKeys(value);
@@ -32,6 +35,21 @@ public class CommonActions {
 
     protected String getPageTitle() {
         return DriverManager.getDriver().getTitle();
+    }
+
+    protected void selectText(By by, String text){
+        select = new Select(DriverManager.getDriver().findElement(by));
+        select.selectByVisibleText(text);
+    }
+
+    protected void selectIndex(By by, int index){
+        select = new Select(DriverManager.getDriver().findElement(by));
+        select.selectByIndex(index);
+    }
+
+    protected void selectValue(By by, String text){
+        select = new Select(DriverManager.getDriver().findElement(by));
+        select.selectByValue(text);
     }
 
 }

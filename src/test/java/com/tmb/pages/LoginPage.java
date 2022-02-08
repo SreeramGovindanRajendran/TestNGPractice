@@ -25,20 +25,26 @@ public class LoginPage extends CommonActions {
 
 
     public LoginPage enterUsername() {
-        clear(txtBxUserName, WaitStrategy.VISIBLE);
         sendKeys(txtBxUserName, loginConfig.username().trim(), WaitStrategy.VISIBLE);
         return this;
     }
 
     public LoginPage enterPassword() {
-        clear(txtBxPassword, WaitStrategy.VISIBLE);
         sendKeys(txtBxPassword, loginConfig.password().trim(), WaitStrategy.VISIBLE);
         return this;
     }
 
-    public HomePage clicklogin() {
+    public void clicklogin() {
         click(btnLogin, WaitStrategy.CLICKABLE);
-        return new HomePage();
     }
 
+    public LoginPage enterNewUsername() {
+        sendKeys(txtBxUserName, loginConfig.createUsername().trim(), WaitStrategy.VISIBLE);
+        return this;
+    }
+
+    public LoginPage enterNewPassword() {
+        sendKeys(txtBxPassword, loginConfig.createPassword().trim(), WaitStrategy.VISIBLE);
+        return this;
+    }
 }

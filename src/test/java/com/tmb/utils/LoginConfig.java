@@ -15,6 +15,24 @@ public interface LoginConfig extends Config {
     @Key("Password")
     String password();
 
+    @Key("CreateUsername")
+    String createUsername();
+
+    @Key("CreatePassword")
+    String createPassword();
+
     @Key("Browser")
     String browser();
+
+    @Key("EmployeeName")
+    String empName();
+
+    @Key("UserRole")
+    String userRole();
+
+    @Key("Status")
+    String status();
+
+
+
 }

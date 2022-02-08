@@ -18,6 +18,13 @@ public final class LoginPageTest extends BaseTest {
         loginPage.launchURL().maximizeLoginPage().enterUsername().enterPassword().clicklogin();
         Assertions.assertThat(homePage.getHomePageTitle()).isEqualTo("OrangeHRM");
     }
+
+    @Test
+    public void verifyNewUser() {
+        loginPage.launchURL().maximizeLoginPage().enterNewUsername().enterNewPassword().clicklogin();
+        Assertions.assertThat(homePage.getHomePageTitle()).isEqualTo("OrangeHRM");
+    }
+
 }
 
 
