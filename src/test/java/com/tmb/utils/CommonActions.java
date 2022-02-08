@@ -18,6 +18,10 @@ public class CommonActions {
         ExplicitWaitFactory.waitBy(by, waitStrategy).clear();
     }
 
+    protected String getText(By by, WaitStrategy waitStrategy) {
+        return ExplicitWaitFactory.waitBy(by, waitStrategy).getText();
+    }
+
     protected void get(String value) {
         DriverManager.getDriver().get(value);
     }

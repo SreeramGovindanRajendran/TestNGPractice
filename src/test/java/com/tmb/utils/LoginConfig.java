@@ -14,4 +14,7 @@ public interface LoginConfig extends Config {
 
     @Key("Password")
     String password();
+
+    @Key("Browser")
+    String browser();
 }

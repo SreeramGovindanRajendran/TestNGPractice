@@ -5,6 +5,7 @@
     <test name="LoginPageTest">
         <classes>
             <class name="com.tmb.tests.LoginPageTest"/>
+            <class name="com.tmb.tests.AdminPageTest"/>
             <class name="com.tmb.tests.HomePageTest"/>
         </classes>
     </test>
