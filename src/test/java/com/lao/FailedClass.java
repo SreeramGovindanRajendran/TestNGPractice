@@ -1,4 +1,4 @@
-package learning;
+package com.lao;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
