@@ -37,19 +37,21 @@ public class CommonActions {
         return DriverManager.getDriver().getTitle();
     }
 
-    protected void selectText(By by, String text){
+    protected void selectDrpDwn(By by, String type, String value, int index) {
         select = new Select(DriverManager.getDriver().findElement(by));
-        select.selectByVisibleText(text);
+        switch (type) {
+            case "text":
+                select.selectByVisibleText(value);
+                break;
+            case "index":
+                select.selectByIndex(index);
+                break;
+            case "value":
+                select.selectByValue(value);
+                break;
+        }
     }
-
-    protected void selectIndex(By by, int index){
-        select = new Select(DriverManager.getDriver().findElement(by));
-        select.selectByIndex(index);
+        protected boolean isElementDisplayed(By by, WaitStrategy waitStrategy){
+            return ExplicitWaitFactory.waitBy(by, waitStrategy).isDisplayed();
+        }
     }
-
-    protected void selectValue(By by, String text){
-        select = new Select(DriverManager.getDriver().findElement(by));
-        select.selectByValue(text);
-    }
-
-}

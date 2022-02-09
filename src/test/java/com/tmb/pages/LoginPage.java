@@ -11,6 +11,7 @@ public class LoginPage extends CommonActions {
     private final By txtBxUserName = By.id("txtUsername");
     private final By txtBxPassword = By.xpath("//input[@id='txtPassword' and @type='password']");
     private final By btnLogin = By.id("btnLogin");
+
     LoginConfig loginConfig = ConfigFactory.create(LoginConfig.class);
 
     public LoginPage launchURL() {
@@ -22,7 +23,6 @@ public class LoginPage extends CommonActions {
         maximizePage();
         return this;
     }
-
 
     public LoginPage enterUsername() {
         sendKeys(txtBxUserName, loginConfig.username().trim(), WaitStrategy.VISIBLE);
@@ -36,15 +36,5 @@ public class LoginPage extends CommonActions {
 
     public void clicklogin() {
         click(btnLogin, WaitStrategy.CLICKABLE);
-    }
-
-    public LoginPage enterNewUsername() {
-        sendKeys(txtBxUserName, loginConfig.createUsername().trim(), WaitStrategy.VISIBLE);
-        return this;
-    }
-
-    public LoginPage enterNewPassword() {
-        sendKeys(txtBxPassword, loginConfig.createPassword().trim(), WaitStrategy.VISIBLE);
-        return this;
     }
 }

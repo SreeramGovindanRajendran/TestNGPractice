@@ -33,6 +33,4 @@ public interface LoginConfig extends Config {
     @Key("Status")
     String status();
 
-
-
 }

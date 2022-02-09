@@ -21,82 +21,85 @@ public class AdminPage extends CommonActions {
     private final By btnDelete = By.id("btnDelete");
     private final By chkSelectAll = By.id("ohrmList_chkSelectAll");
     private final By btnOK = By.xpath("//*[@value='Ok' and @id='dialogDeleteBtn']");
+    private final By addMessage = By.xpath("//*[text()='Successfully Saved']");
+    private final By deleteMessage = By.xpath("//*[text()='Successfully Deleted']");
+    private final By noRecord = By.xpath("//*[text()='No Records Found']");
 
-    public AdminPage clickAdmin(){
+    public AdminPage clickAdmin() {
         click(btnAdmin, WaitStrategy.CLICKABLE);
         return this;
     }
 
-    public AdminPage searchUser(String user){
-        sendKeys(txtUsername, user, WaitStrategy.CLICKABLE);
+    public AdminPage searchUser(String user) {
+        sendKeys(txtUsername, user, WaitStrategy.VISIBLE);
         return this;
     }
 
-    public AdminPage clickSearch(){
+    public AdminPage clickSearch() {
         click(btnSearch, WaitStrategy.CLICKABLE);
         return this;
     }
 
-    public String getColumnValues(){
+    public String getColumnValues() {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return getText(txtColumn, WaitStrategy.VISIBLE);
-   }
+    }
 
-    public AdminPage clickAdd(){
+    public AdminPage clickAdd() {
         click(btnAdd, WaitStrategy.CLICKABLE);
         return this;
     }
 
-    public AdminPage selectUserDrpdwn(String text){
-        selectText(drpUserRole, text);
+    public AdminPage selectUserDrpdwn(String value) {
+        selectDrpDwn(drpUserRole, "text", value, 0);
         return this;
     }
 
-    public AdminPage selectStatusDrpdwn(String text){
-        selectText(drpStatus, text);
+    public AdminPage selectStatusDrpdwn(String value) {
+        selectDrpDwn(drpStatus, "text", value, 0);
         return this;
     }
 
-    public AdminPage enterNewUsername(String text){
-        sendKeys(txtCreateUsername, text, WaitStrategy.CLICKABLE);
+    public AdminPage enterNewUsername(String text) {
+        sendKeys(txtCreateUsername, text, WaitStrategy.VISIBLE);
         return this;
     }
 
-    public AdminPage enterEmpName(String text){
-        sendKeys(txtEmpName, text, WaitStrategy.CLICKABLE);
+    public AdminPage enterEmpName(String text) {
+        sendKeys(txtEmpName, text, WaitStrategy.VISIBLE);
         return this;
     }
 
-    public AdminPage enterNewPassword(String text){
-        sendKeys(txtCreatePassword, text, WaitStrategy.CLICKABLE);
+    public AdminPage enterNewPassword(String text) {
+        sendKeys(txtCreatePassword, text, WaitStrategy.VISIBLE);
         return this;
     }
 
-    public AdminPage enterCnfmPassword(String text){
-        sendKeys(txtConfirmPassword, text, WaitStrategy.CLICKABLE);
+    public AdminPage enterCnfmPassword(String text) {
+        sendKeys(txtConfirmPassword, text, WaitStrategy.VISIBLE);
         return this;
     }
 
-    public AdminPage clickSave(){
+    public AdminPage clickSave() {
         click(btnSave, WaitStrategy.CLICKABLE);
         return this;
     }
 
-    public AdminPage checkAll(){
+    public AdminPage checkAll() {
         click(chkSelectAll, WaitStrategy.CLICKABLE);
         return this;
     }
 
-    public AdminPage clickDelete(){
+    public AdminPage clickDelete() {
         click(btnDelete, WaitStrategy.CLICKABLE);
         return this;
     }
 
-    public void clickOk(){
+    public void clickOk() {
         click(btnOK, WaitStrategy.CLICKABLE);
         try {
             Thread.sleep(3000);
@@ -105,5 +108,20 @@ public class AdminPage extends CommonActions {
         }
     }
 
+    public boolean verifyAddMessage(){
+        return isElementDisplayed(addMessage, WaitStrategy.NONE);
+    }
 
+    public boolean verifyDeleteMessage(){
+        return isElementDisplayed(deleteMessage, WaitStrategy.NONE);
+    }
+
+    public AdminPage searchUserDetails(String userName){
+        clickAdmin().searchUser(userName).clickSearch();
+        return this;
+    }
+
+    public boolean noRecordsFound(){
+        return isElementDisplayed(noRecord, WaitStrategy.NONE);
+    }
 }
