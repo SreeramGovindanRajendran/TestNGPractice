@@ -1,5 +1,6 @@
 package com.tmb.pages;
 
+import com.tmb.constants.FrameworkConstants;
 import com.tmb.enums.WaitStrategy;
 import com.tmb.utils.CommonActions;
 import org.openqa.selenium.By;
@@ -42,7 +43,7 @@ public class AdminPage extends CommonActions {
 
     public String getColumnValues() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(FrameworkConstants.THREAD_SECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -102,18 +103,10 @@ public class AdminPage extends CommonActions {
     public void clickOk() {
         click(btnOK, WaitStrategy.CLICKABLE);
         try {
-            Thread.sleep(3000);
+            Thread.sleep(FrameworkConstants.THREAD_SECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public boolean verifyAddMessage(){
-        return isElementDisplayed(addMessage, WaitStrategy.NONE);
-    }
-
-    public boolean verifyDeleteMessage(){
-        return isElementDisplayed(deleteMessage, WaitStrategy.NONE);
     }
 
     public AdminPage searchUserDetails(String userName){
