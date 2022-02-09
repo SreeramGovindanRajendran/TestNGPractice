@@ -5,15 +5,15 @@
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="CrossBrowser"/>
-            <class name="CrossBrowser"/>
+<!--            <class name="CrossBrowser"/>-->
+<!--            <class name="CrossBrowser"/>-->
         </classes>
     </test>
 
     <test name="EdgeTest">
         <parameter name="browser" value="Edge"/>
         <classes>
-            <class name="CrossBrowser"/>
+<!--            <class name="CrossBrowser"/>-->
         </classes>
     </test>
 

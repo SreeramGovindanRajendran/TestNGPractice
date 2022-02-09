@@ -3,8 +3,11 @@ package com.tmb.utils;
 import com.tmb.drivers.DriverManager;
 import com.tmb.enums.WaitStrategy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 public class CommonActions {
+
+    Select select;
 
     protected void sendKeys(By by, String value, WaitStrategy waitStrategy) {
         ExplicitWaitFactory.waitBy(by, waitStrategy).sendKeys(value);
@@ -34,4 +37,21 @@ public class CommonActions {
         return DriverManager.getDriver().getTitle();
     }
 
-}
+    protected void selectDrpDwn(By by, String type, String value, int index) {
+        select = new Select(DriverManager.getDriver().findElement(by));
+        switch (type) {
+            case "text":
+                select.selectByVisibleText(value);
+                break;
+            case "index":
+                select.selectByIndex(index);
+                break;
+            case "value":
+                select.selectByValue(value);
+                break;
+        }
+    }
+        protected boolean isElementDisplayed(By by, WaitStrategy waitStrategy){
+            return ExplicitWaitFactory.waitBy(by, waitStrategy).isDisplayed();
+        }
+    }

@@ -14,4 +14,5 @@ public final class HomePageTest extends BaseTest {
     public void logout() {
         homePage.clickWelcome().clickLogout();
     }
+
 }

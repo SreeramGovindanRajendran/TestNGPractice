@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="tmbSuite">
+    <test name="AdminUserTest">
+        <classes>
+            <class name="com.tmb.tests.LoginPageTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.AdminPageTest">
+                <methods>
+                    <include name="createUser"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.HomePageTest">
+                <methods>
+                    <include name="logout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NewUserTest">
+        <classes>
+            <class name="com.tmb.tests.LoginPageTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.AdminPageTest">
+                <methods>
+                    <include name="deleteUser"/>
+                </methods>
+            </class>
+            <class name="com.tmb.tests.HomePageTest">
+                <methods>
+                    <include name="logout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
