@@ -24,7 +24,7 @@ need to declare all param from excel when using object[][] data provider
 
     @DataProvider
     public Object[][] excelData1() throws IOException {
-        FileInputStream fis = new FileInputStream("C:\\Dev\\workspace\\TestNGPractice\\src\\main\\resources\\lao\\data.xlsx");
+        FileInputStream fis = new FileInputStream("C:\\Dev\\workspace\\TestNGPractice\\src\\main\\resources\\lao\\testdata.xlsx");
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         XSSFSheet sheet = wb.getSheet("Sheet1");
 
@@ -58,7 +58,7 @@ only declare map when using object[] data provider
      */
     @DataProvider
     public Object[] excelData() throws IOException {
-        FileInputStream fis = new FileInputStream("C:\\Dev\\workspace\\TestNGPractice\\src\\main\\resources\\tmb\\data.xlsx");
+        FileInputStream fis = new FileInputStream("C:\\Dev\\workspace\\TestNGPractice\\src\\main\\resources\\tmb\\testdata.xlsx");
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         XSSFSheet sheet = wb.getSheet("Sheet1");
 
